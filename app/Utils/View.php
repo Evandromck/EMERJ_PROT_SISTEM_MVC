@@ -38,7 +38,7 @@ class View{
 
         echo "<pre>";
         print_r($vars);
-        echo "</pre>" or exit;
+        /* echo "</pre>" or exit; */
 
         //RETORNA O CONTEÚDO RENDERIZADO
         return  $contentView;
