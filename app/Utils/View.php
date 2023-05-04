@@ -36,12 +36,14 @@ class View{
         //CONTEÚDO DA VIEW 
         $contentView = self::getContentView($view);
 
-        echo "<pre>";
-        print_r($vars);
-        /* echo "</pre>" or exit; */
+        $keys = array_keys($vars);
+        $keys = array_map(function($item){
+           return '{{'.$item.'}}';
+        },$keys);
+      
 
         //RETORNA O CONTEÚDO RENDERIZADO
-        return  $contentView;
+        return  str_replace($keys,array_values($vars),$contentView);
 
      }
 }
